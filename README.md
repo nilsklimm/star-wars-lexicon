@@ -1,36 +1,45 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Star Wars Lexicon
+
+A **Star Wars lexicon** built with **Next.js** that leverages the [SWAPI](https://swapi.dev/) API to fetch and display detailed information about Star Wars characters, planets, starships, and more. Explore the galaxy far, far away right from your browser!  
+
+## Features
+
+- Fetches data from the official **SWAPI** (Star Wars API).
+- Interactive lists of **characters, planets, starships**, and other entities.
+- **Next.js** for server-side rendering and fast navigation.
+- Responsive layout that adapts to every screen size.
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js >= 20.x
+- npm or yarn
+
+### Installation
+
+```bash
+git clone <your-repo-url>
+cd <your-repo-directory>
+npm install
+```
+
+### Available Scripts
+
+In the project directory, you can run:
+
+| Script | Description |
+|--------|-------------|
+| `npm run dev` | Starts the development server at `http://localhost:3000`. Hot-reloads on changes. |
+| `npm run build` | Builds the application for production. |
+| `npm run start` | Starts the production server after building. |
+| `npm run lint` | Runs ESLint to check for code style and errors. |
+| `npm run test` | Runs Jest tests for your project. |
+
+### Example
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Visit `http://localhost:3000` in your browser to start exploring the Star Wars universe.
