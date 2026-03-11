@@ -3,7 +3,11 @@ import { render, screen } from "@testing-library/react";
 import Page from "../page";
 
 jest.mock("next-intl", () => ({
-  useTranslations: jest.fn(() => (key: string) => key),
+  useTranslations: jest.fn(() => {
+    const t = (key: string) => key;
+    t.rich = (key: string) => <>{key}</>;
+    return t;
+  }),
 }));
 
 describe("Page", () => {

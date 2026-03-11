@@ -1,5 +1,5 @@
 
-const SWAPI_BASE_URL = "https://swapi.dev/api/";
+const SWAPI_BASE_URL = "https://swapi.dev/api";
 
 export const getResourceList = (slug: string, options?: { page?: number, search?: string }) => {
   const { page = 1, search } = options ?? {};

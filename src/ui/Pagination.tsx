@@ -1,6 +1,7 @@
+"use client";
+
 import ButtonLink from "@/ui/ButtonLink";
 import { useTranslations } from "next-intl";
-// import { useRouter } from 'next/navigation';
 
 export default function Pagination({ url, page, pageCount }: Readonly<{
   url: string,
@@ -8,14 +9,12 @@ export default function Pagination({ url, page, pageCount }: Readonly<{
   pageCount: number,
 }>) {
   const t = useTranslations("Pagination");
-  // const router = useRouter();
 
   const prevUrl = `/${url}?page=${Math.max(1, page - 1)}`;
   const nextUrl = `/${url}?page=${Math.min(pageCount, page + 1)}`;
 
   const goToPage = (url: string) => (e: React.MouseEvent<HTMLAnchorElement> | React.KeyboardEvent) => {
     e.preventDefault();
-    // router.push(url);
     history.pushState({}, "", url);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
