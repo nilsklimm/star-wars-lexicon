@@ -27,16 +27,21 @@ export default function ResourceLoader({ resource }: {
   const { count, results = [] } = data || {} as ResourceListType;
   const pageCount = useMemo(() => count > 0 ? Math.ceil(count / 10) : 0, [count]);
 
-  console.log({ results });
-
   if(error) notFound();
 
+
   return (
-    <Card className="flex flex-col gap-6">
+    <Card className="flex flex-col gap-6 min-h-64">
       {<Loader isLoading={isLoading} />}
-      <Pagination url={resource} page={page} pageCount={pageCount} />
-      <ResourceList resource={resource} results={results} />
-      <Pagination url={resource} page={page} pageCount={pageCount} />
+      {isLoading && results.length === 0 ? (
+        <span>Loading...</span>
+      ): (
+        <>
+          <Pagination url={resource} page={page} pageCount={pageCount} />
+          <ResourceList resource={resource} results={results} />
+          <Pagination url={resource} page={page} pageCount={pageCount} />
+        </>
+      )}
     </Card>
   );
 
