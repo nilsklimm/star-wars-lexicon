@@ -14,6 +14,8 @@
     "test:watch": "jest --watch"
   },
   "dependencies": {
+    "lodash.capitalize": "^4.2.1",
+    "lodash.startcase": "^4.4.0",
     "next": "16.1.6",
     "next-intl": "^4.8.3",
     "query-string": "^9.3.1",
@@ -27,6 +29,8 @@
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.2",
     "@types/jest": "^30.0.0",
+    "@types/lodash.capitalize": "^4.2.9",
+    "@types/lodash.startcase": "^4.4.9",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",

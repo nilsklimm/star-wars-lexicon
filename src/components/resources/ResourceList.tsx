@@ -1,6 +1,6 @@
 import { RESOURCE_KEYS, RESOURCE_SCHEMAS, ResourceKeyType } from "@/constants/resources";
-import { formatLabel } from "@/lib/formatLabel";
 import { ResourceItemType } from "@/types/resources";
+import startCase from "lodash.startcase";
 
 export default function ResourceTable({ resource, results }: {
   resource: ResourceKeyType;
@@ -24,7 +24,7 @@ export default function ResourceTable({ resource, results }: {
                   .filter(key => key !== schema.name && key in row)
                   .map(key => (
                     <div className="min-w-32 max-w-64" key={key}>
-                      <dl className="font-bold capitalize mb-1">{formatLabel(key)}</dl>
+                      <dl className="font-bold mb-1">{startCase(key)}</dl>
                       <dt>{row[key]}</dt>
                     </div>
                   ))}
