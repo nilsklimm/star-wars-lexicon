@@ -1,0 +1,12 @@
+{
+  "Header": {
+    "title": "Star Wars Encyclopedia"
+  },
+  "HomePage": {
+    "description": "This Encyclopedia is a web application created as part of a coding challenge, designed to provide fans with a comprehensive and interactive database of the Star Wars universe. Leveraging the SWAPI (https://swapi.dev/) API, the project fetches and displays detailed information about characters, starships, planets, and more.\n\nBuilt using TypeScript, React, and Next.js, the application ensures type safety, fast performance, and server-side rendering for a smooth user experience. The styling is handled with Tailwind CSS, offering a responsive and visually appealing design across devices.\n\nAdditionally, the project is rigorously tested with Jest, ensuring reliability and correctness of the core functionalities. This project demonstrates both frontend development skills and effective API integration while delivering an engaging experience for Star Wars enthusiasts."
+  },
+  "Pagination": {
+   "previous": "Previous",
+   "next": "Next"
+  }
+}
