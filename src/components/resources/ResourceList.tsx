@@ -18,13 +18,13 @@ export default function ResourceTable({ resource, results }: {
         .map((row: ResourceItemType, index: number) => {
           return (
             <article key={`row-${index}`} className="not-first-of-type:pt-6 not-first-of-type:border-t">
-              <h2 className="text-xl font-bold mt-0 mb-4">{row[schema.name]}</h2>
-              <dl className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 auto-rows-fr gap-x-6 gap-y-4">
+              <h2 className="text-xl font-bold mt-0 mb-6">{row[schema.name]}</h2>
+              <dl className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
                 {schema.props
                   .filter(key => key !== schema.name && key in row)
                   .map(key => (
                     <div className="min-w-32 max-w-64" key={key}>
-                      <dl className="font-bold capitalize">{formatLabel(key)}</dl>
+                      <dl className="font-bold capitalize mb-1">{formatLabel(key)}</dl>
                       <dt>{row[key]}</dt>
                     </div>
                   ))}
