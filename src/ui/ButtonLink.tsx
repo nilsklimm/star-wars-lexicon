@@ -21,7 +21,7 @@ export default function ButtonLink({
   if (disabled) {
     return (
       <span
-        aria-disabled={disabled}
+        aria-hidden="true"
         className={`
           ${coreClassName}
           text-neutral-400
@@ -37,7 +37,6 @@ export default function ButtonLink({
     <Link
       {...props}
       href={href}
-      aria-disabled={disabled}
       className={`
         ${coreClassName}
         text-black
