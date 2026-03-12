@@ -3,7 +3,6 @@
 import { ResourceKeyType } from "@/constants/resources";
 import { JSONFetcher } from "@/lib/fetcher";
 import { getResourceList } from "@/lib/swapiUrls";
-import { ResourceListType } from "@/types/resources";
 import Card from "@/ui/Card";
 import Loader from "@/ui/Loader";
 import Pagination from "@/ui/Pagination";
@@ -21,10 +20,13 @@ export default function ResourceLoader({ resource }: {
   const { data, error, isLoading } = useSWR(
     getResourceList(resource, { page }),
     JSONFetcher,
-    { keepPreviousData: true }
+    {
+      keepPreviousData: true,
+      revalidateOnMount: false,
+    }
   );
 
-  const { count, results = [] } = data || {} as ResourceListType;
+  const { count, results } = data  || {};
   const pageCount = useMemo(() => count > 0 ? Math.ceil(count / 10) : 0, [count]);
 
   if(error) notFound();
@@ -32,9 +34,7 @@ export default function ResourceLoader({ resource }: {
   return (
     <Card className="flex flex-col gap-6">
       {<Loader isLoading={isLoading} />}
-      {isLoading && results.length === 0 ? (
-        <span>Loading...</span>
-      ): (
+      {Array.isArray(results) && results.length > 0 && (
         <>
           <Pagination url={resource} page={page} pageCount={pageCount} />
           <ResourceList resource={resource} results={results} />

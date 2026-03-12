@@ -4,7 +4,7 @@ import { ResourceItemType } from "@/types/resources";
 import startCase from "lodash.startcase";
 import Link from "next/link";
 
-export default function ResourceTable({ resource, results }: {
+export default function ResourceList({ resource, results }: {
   resource: ResourceKeyType;
   results: ResourceItemType[];
 }) {
