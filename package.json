@@ -1,6 +1,7 @@
 {
   "name": "star-wars-lexicon",
   "version": "0.1.0",
+  "author": "Nils Klimm",
   "private": true,
   "engines": {
     "node": ">=20.9.0"
