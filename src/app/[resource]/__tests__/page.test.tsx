@@ -11,7 +11,17 @@ global.fetch = jest.fn(() =>
     ok: true,
     json: () => Promise.resolve({
       count: 1,
-      results: [{ name: "Luke Skywalker" }]
+      results: [{
+        name: "Luke Skywalker",
+        height: "172",
+        mass: "77",
+        hair_color: "blond",
+        skin_color: "fair",
+        eye_color: "blue",
+        birth_year: "19BBY",
+        gender: "male",
+        homeworld: "https://swapi.dev/api/people/1/",
+      }]
     }),
   }),
 ) as jest.Mock;
@@ -45,5 +55,14 @@ describe("Page", () => {
     await waitFor(() =>
       expect(screen.getByText("Luke Skywalker")).toBeInTheDocument()
     );
+
+    expect(screen.getByText("172")).toBeInTheDocument();
+    expect(screen.getByText("77")).toBeInTheDocument();
+    expect(screen.getByText("blond")).toBeInTheDocument();
+    expect(screen.getByText("fair")).toBeInTheDocument();
+    expect(screen.getByText("blue")).toBeInTheDocument();
+    expect(screen.getByText("19BBY")).toBeInTheDocument();
+    expect(screen.getByText("male")).toBeInTheDocument();
+    expect(screen.queryByText("https://swapi.dev/api/people/1/")).not.toBeInTheDocument();
   });
 });
