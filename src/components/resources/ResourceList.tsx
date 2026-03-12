@@ -47,8 +47,8 @@ export default function ResourceList({ resource, results }: {
                   .filter(key => key !== schema.name && key in row)
                   .map(key => (
                     <div className="min-w-32 max-w-64" key={key}>
-                      <dl className="mb-1 text-lg font-medium">{startCase(key)}</dl>
-                      <dt>{row[key]}</dt>
+                      <dt className="mb-1 text-lg font-medium">{startCase(key)}</dt>
+                      <dd>{row[key]}</dd>
                     </div>
                   ))}
               </dl>
