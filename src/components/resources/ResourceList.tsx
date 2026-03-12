@@ -20,16 +20,29 @@ export default function ResourceList({ resource, results }: {
         .map((row: ResourceItemType, index: number) => {
           return (
             <article
-              className="flex flex-col gap-5 not-first-of-type:pt-6 not-first-of-type:border-t"
+              className="
+                flex flex-col gap-5
+                not-first-of-type:pt-6
+                not-first-of-type:border-t
+                not-first-of-type:border-neutral-500
+              "
               key={`row-${index}`}
             >
               <Link
                 href={`/${resource}/details/${extractIdFromUrl(row.url)}`}
-                className="glow-line-left text-2xl self-start text-neutral-300 hover:text-white"
+                className="
+                  glow-line-left text-2xl self-start
+                  text-neutral-300 hover:text-white
+                "
               >
                 {row[schema.name]}
               </Link>
-              <dl className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5">
+              <dl
+                className="
+                  grid grid-cols-2
+                  sm:grid-cols-3
+                  md:grid-cols-4 gap-5
+                ">
                 {schema.props
                   .filter(key => key !== schema.name && key in row)
                   .map(key => (
