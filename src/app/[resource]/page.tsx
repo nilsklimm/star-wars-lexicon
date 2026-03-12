@@ -10,7 +10,7 @@ import { SWRConfig } from "swr";
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ resource: string, uid: string }>;
+  params: Promise<{ resource: string }>;
 }) {
   const { resource } = await params;
   const t = await getTranslations("Header");
@@ -47,5 +47,4 @@ export default async function ResourceListPage({
       <ResourceLoader resource={resource} />
     </SWRConfig>
   );
-
 }
