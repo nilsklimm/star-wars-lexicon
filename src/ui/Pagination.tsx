@@ -8,12 +8,12 @@ export default function Pagination({ url, page, pageCount }: Readonly<{
   page: number,
   pageCount: number,
 }>) {
-  const t = useTranslations("Pagination");
+  const t = useTranslations("Navigation");
 
   const prevUrl = `/${url}?page=${Math.max(1, page - 1)}`;
   const nextUrl = `/${url}?page=${Math.min(pageCount, page + 1)}`;
 
-  const goToPage = (url: string) => (e: React.MouseEvent<HTMLAnchorElement> | React.KeyboardEvent) => {
+  const goToPage = (url: string) => (e: React.MouseEvent | React.KeyboardEvent) => {
     e.preventDefault();
     history.pushState({}, "", url);
     window.scrollTo({ top: 0, behavior: "smooth" });

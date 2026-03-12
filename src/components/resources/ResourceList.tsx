@@ -1,6 +1,8 @@
 import { RESOURCE_KEYS, RESOURCE_SCHEMAS, ResourceKeyType } from "@/constants/resources";
+import { extractIdFromUrl } from "@/lib/extractIdFromUrl";
 import { ResourceItemType } from "@/types/resources";
 import startCase from "lodash.startcase";
+import Link from "next/link";
 
 export default function ResourceTable({ resource, results }: {
   resource: ResourceKeyType;
@@ -17,14 +19,22 @@ export default function ResourceTable({ resource, results }: {
         .filter((row: ResourceItemType) => schema.name in row)
         .map((row: ResourceItemType, index: number) => {
           return (
-            <article key={`row-${index}`} className="not-first-of-type:pt-6 not-first-of-type:border-t">
-              <h2 className="text-xl font-bold mt-0 mb-6">{row[schema.name]}</h2>
-              <dl className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
+            <article
+              className="flex flex-col gap-5 not-first-of-type:pt-6 not-first-of-type:border-t"
+              key={`row-${index}`}
+            >
+              <Link
+                href={`/${resource}/details/${extractIdFromUrl(row.url)}`}
+                className="glow-line-left text-2xl self-start text-neutral-300 hover:text-white"
+              >
+                {row[schema.name]}
+              </Link>
+              <dl className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5">
                 {schema.props
                   .filter(key => key !== schema.name && key in row)
                   .map(key => (
                     <div className="min-w-32 max-w-64" key={key}>
-                      <dl className="font-bold mb-1">{startCase(key)}</dl>
+                      <dl className="mb-1 text-lg font-medium">{startCase(key)}</dl>
                       <dt>{row[key]}</dt>
                     </div>
                   ))}

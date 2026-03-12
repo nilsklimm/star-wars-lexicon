@@ -1,0 +1,27 @@
+@layer components {
+  .glow-line-left {
+    margin-left: calc(var(--spacing) * -2 - 3px);
+    @apply inline-flex items-center gap-x-2;
+  }
+  .glow-line-left::before {
+    content: "";
+    width: 3px;
+    height: 1em;
+    filter: blur(0.8px);
+    border: 1px solid;
+    box-shadow: 0 0 6px 1.5px #f70;
+    @apply inline-block rounded-full bg-amber-100 border-amber-300;
+  }
+  .glow-line-bottom {
+    position: relative;
+  }
+  .glow-line-bottom.active::after {
+    content: "";
+    height: 3px;
+    filter: blur(0.8px);
+    border: 1px solid;
+    box-shadow: 0 0 6px 1.5px #f70;
+    @apply absolute block w-full rounded-full bg-amber-100 border-amber-300;
+
+  }
+}
