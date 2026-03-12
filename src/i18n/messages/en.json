@@ -3,10 +3,18 @@
     "title": "Star Wars Lexicon"
   },
   "HomePage": {
-    "description": "This is a web application created as part of a coding challenge, designed to provide fans with a comprehensive and interactive database of the Star Wars universe. Leveraging the <em>SWAPI</em> (https://swapi.dev/) API, the project fetches and displays detailed information about characters, starships, planets, and more.\n\nBuilt using <em>TypeScript</em>, <em>React</em>, and <em>Next.js</em>, the application ensures type safety, fast performance, and server-side rendering for a smooth user experience. The styling is handled with <em>Tailwind CSS</em>, offering a responsive and visually appealing design across devices.\n\nAdditionally, the project is rigorously tested with <em>Jest</em>, ensuring reliability and correctness of the core functionalities. This project demonstrates both frontend development skills and effective API integration while delivering an engaging experience for Star Wars enthusiasts."
+    "description": "This is a web application created as part of a coding challenge, designed to provide fans with a comprehensive and interactive database of the Star Wars universe. Leveraging the <em>SWAPI</em> (<url>https://swapi.dev/</url>) API, the project fetches and displays detailed information about characters, starships, planets, and more.\n\nBuilt using <em>TypeScript</em>, <em>React</em>, and <em>Next.js</em>, the application ensures type safety, fast performance, and server-side rendering for a smooth user experience. The styling is handled with <em>Tailwind CSS</em>, offering a responsive and visually appealing design across devices.\n\nAdditionally, the project is tested with <em>Jest</em>, ensuring reliability and correctness of the core functionalities and showcases frontend development skills and API integration, aiming to provide an enjoyable experience for Star Wars enthusiasts."
   },
-  "Pagination": {
+  "Navigation": {
    "previous": "Previous",
-   "next": "Next"
+   "next": "Next",
+   "back": "Go back"
+  },
+  "ErrorPage": {
+    "backHome": "Back to Home",
+    "404":{
+      "title": "404 - Page Not Found",
+      "description": "Sorry, we couldn’t find the page you’re looking for."
+    }
   }
 }

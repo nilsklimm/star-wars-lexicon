@@ -19,6 +19,8 @@ const eslintConfig = defineConfig([
       quotes: ["error", "double"],
       indent: ["error", 2],
       "object-curly-spacing": ["error", "always"],
+      "react/jsx-first-prop-new-line": ["error", "multiline"],
+      "react/jsx-max-props-per-line": ["error", { maximum: 3 }],
     },
   },
 ]);

@@ -13,7 +13,7 @@ A **Star Wars lexicon** built with **Next.js** that leverages the [SWAPI](https:
 
 ### Prerequisites
 
-- Node.js >= 20.x
+- Node.js >= 20.9.0
 - npm or yarn
 
 ### Installation

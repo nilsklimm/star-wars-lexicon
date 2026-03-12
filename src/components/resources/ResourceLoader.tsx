@@ -29,9 +29,8 @@ export default function ResourceLoader({ resource }: {
 
   if(error) notFound();
 
-
   return (
-    <Card className="flex flex-col gap-6 min-h-64">
+    <Card className="flex flex-col gap-6">
       {<Loader isLoading={isLoading} />}
       {isLoading && results.length === 0 ? (
         <span>Loading...</span>
