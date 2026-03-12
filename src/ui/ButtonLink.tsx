@@ -14,8 +14,8 @@ export default function ButtonLink({
   const coreClassName = `
     ${className}
     px-4 py-1.5 rounded-full
-    text-neutral-900 bg-amber-300
     font-medium select-none
+    shadow-md shadow-black/30
   `;
 
   if (disabled) {
@@ -24,7 +24,9 @@ export default function ButtonLink({
         aria-disabled={disabled}
         className={`
           ${coreClassName}
-          opacity-40 cursor-not-allowed
+          text-neutral-400
+          inset-ring-2 inset-ring-neutral-400
+          opacity-50 cursor-not-allowed
         `}
       >
         {children}
@@ -38,7 +40,8 @@ export default function ButtonLink({
       aria-disabled={disabled}
       className={`
         ${coreClassName}
-        hover:bg-amber-400
+        text-black
+        bg-amber-300 hover:bg-amber-400
       `}
     >
       {children}

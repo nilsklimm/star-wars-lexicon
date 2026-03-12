@@ -3,22 +3,23 @@ import { RESOURCE_KEYS, RESOURCE_SCHEMAS, ResourceKeyType } from "@/constants/re
 import { getResourceDetails } from "@/lib/swapiUrls";
 import Card from "@/ui/Card";
 import capitalize from "lodash.capitalize";
+import { getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
 
 export async function generateMetadata({
   params,
 }: {
   params: Promise<{ resource: string, uid: string }>;
-
 }) {
   const { resource } = await params;
+  const t = await getTranslations("Header");
 
   return {
-    title: `Star Wars Lexicon - ${capitalize(resource)}`
+    title: `${capitalize(resource)} - ${t("title")}`
   };
 };
 
-export default async function ResourceListPage({
+export default async function ResourceDetailsPage({
   params,
 }: {
   params: Promise<{ resource: string, uid: string }>;

@@ -13,14 +13,16 @@ export default function Pagination({ url, page, pageCount }: Readonly<{
   const prevUrl = `/${url}?page=${Math.max(1, page - 1)}`;
   const nextUrl = `/${url}?page=${Math.min(pageCount, page + 1)}`;
 
-  const goToPage = (url: string) => (e: React.MouseEvent | React.KeyboardEvent) => {
+  const goToPage = (url: string) => (e: React.MouseEvent) => {
     e.preventDefault();
     history.pushState({}, "", url);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  if (pageCount <= 1) return null;
+
   return (
-    <div className="flex justify-between items-center">
+    <div className="flex justify-between items-center h-9">
       <span>Page {page} of {pageCount}</span>
       <nav aria-label="Pagination" className="flex justify-end gap-4">
         <ButtonLink
@@ -41,6 +43,7 @@ export default function Pagination({ url, page, pageCount }: Readonly<{
         >
           {t("next")}
         </ButtonLink>
+
       </nav>
     </div>
   );
