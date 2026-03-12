@@ -19,8 +19,8 @@ A **Star Wars lexicon** built with **Next.js** that leverages the [SWAPI](https:
 ### Installation
 
 ```bash
-git clone <your-repo-url>
-cd <your-repo-directory>
+git clone https://github.com/nilsklimm/star-wars-lexicon.git
+cd star-wars-lexicon
 npm install
 ```
 
@@ -42,4 +42,4 @@ In the project directory, you can run:
 npm run dev
 ```
 
-Visit `http://localhost:3000` in your browser to start exploring the Star Wars universe.
+Visit `http://localhost:3000` in your browser to start exploring.
