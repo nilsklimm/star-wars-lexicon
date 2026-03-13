@@ -1,14 +1,4 @@
-const clipPath =
-  "[clip-path:polygon(" +
-    "0_0," +
-    "100%_0," +
-    "100%_100%," +
-    "94%_100%," +
-    "calc(94%-24px)_calc(100%-16px)," +
-    "calc(74%+24px)_calc(100%-16px)," +
-    "74%_100%," +
-    "0_100%" +
-  ")]";
+const clipPath = "[clip-path:polygon(0_0,100%_0,100%_100%,94%_100%,calc(94%-24px)_calc(100%-16px),calc(74%+24px)_calc(100%-16px),74%_100%,0_100%)]";
 
 export default function Card({
   children,
