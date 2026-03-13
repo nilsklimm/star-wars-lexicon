@@ -26,7 +26,7 @@ export default function ResourceLoader({ resource }: {
     },
   );
 
-  const { count, results } = data  || {} as ResourceListType;
+  const { count = 0, results = [] }: ResourceListType = data || {};
   const pageCount = useMemo(() => count > 0 ? Math.ceil(count / 10) : 0, [count]);
 
   if(error) notFound();
