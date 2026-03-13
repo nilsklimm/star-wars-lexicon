@@ -1,6 +1,23 @@
-export const PEOPLE_SCHEMA = {
+type SchemaType = {
+  name: string;
+  attrs: string[];
+  texts?: string[];
+  links: string[];
+  meta: string[]
+};
+
+export enum RESOURCE_TYPES {
+  people = "people",
+  planets = "planets",
+  films = "films",
+  species = "species",
+  vehicles = "vehicles",
+  starships = "starships",
+};
+
+export const PEOPLE_SCHEMA: SchemaType = {
   name: "name",
-  props: [
+  attrs: [
     "height",
     "mass",
     "hair_color",
@@ -13,9 +30,9 @@ export const PEOPLE_SCHEMA = {
   meta: ["created", "edited"],
 };
 
-export const PLANET_SCHEMA = {
+export const PLANET_SCHEMA: SchemaType = {
   name: "name",
-  props: [
+  attrs: [
     "name",
     "rotation_period",
     "orbital_period",
@@ -30,17 +47,17 @@ export const PLANET_SCHEMA = {
   meta: ["created", "edited"],
 };
 
-export const FILM_SCHEMA = {
+export const FILM_SCHEMA: SchemaType = {
   name: "title",
-  props: ["title", "episode_id", "director", "producer", "release_date"],
-  details: ["opening_crawl"],
+  attrs: ["title", "episode_id", "director", "producer", "release_date"],
+  texts: ["opening_crawl"],
   links: ["characters", "planets", "starships", "vehicles", "species"],
   meta: ["created", "edited"],
 };
 
-export const SPECIES_SCHEMA = {
+export const SPECIES_SCHEMA: SchemaType = {
   name: "name",
-  props: [
+  attrs: [
     "name",
     "classification",
     "designation",
@@ -55,9 +72,9 @@ export const SPECIES_SCHEMA = {
   meta: ["created", "edited"],
 };
 
-export const VEHICLE_SCHEMA = {
+export const VEHICLE_SCHEMA: SchemaType = {
   name: "name",
-  props: [
+  attrs: [
     "name",
     "model",
     "manufacturer",
@@ -74,9 +91,9 @@ export const VEHICLE_SCHEMA = {
   meta: ["created", "edited"],
 };
 
-export const STARSHIP_SCHEMA = {
+export const STARSHIP_SCHEMA: SchemaType = {
   name: "name",
-  props: [
+  attrs: [
     "name",
     "model",
     "manufacturer",
@@ -95,15 +112,11 @@ export const STARSHIP_SCHEMA = {
   meta: ["created", "edited"],
 };
 
-export const RESOURCE_SCHEMAS = {
-  people: PEOPLE_SCHEMA,
-  planets: PLANET_SCHEMA,
-  films: FILM_SCHEMA,
-  species: SPECIES_SCHEMA,
-  vehicles: VEHICLE_SCHEMA,
-  starships: STARSHIP_SCHEMA,
+export const RESOURCE_SCHEMAS: Record<RESOURCE_TYPES, SchemaType> = {
+  [RESOURCE_TYPES.people]: PEOPLE_SCHEMA,
+  [RESOURCE_TYPES.planets]: PLANET_SCHEMA,
+  [RESOURCE_TYPES.films]: FILM_SCHEMA,
+  [RESOURCE_TYPES.species]: SPECIES_SCHEMA,
+  [RESOURCE_TYPES.vehicles]: VEHICLE_SCHEMA,
+  [RESOURCE_TYPES.starships]: STARSHIP_SCHEMA,
 } as const;
-
-export type ResourceKeyType = keyof typeof RESOURCE_SCHEMAS;
-
-export const RESOURCE_KEYS = Object.keys(RESOURCE_SCHEMAS) as ResourceKeyType[];

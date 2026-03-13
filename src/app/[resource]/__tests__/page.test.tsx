@@ -1,4 +1,4 @@
-import { ResourceKeyType } from "@/constants/resources";
+import { ResourceKeyType } from "@/types/resources";
 import "@testing-library/jest-dom";
 import { act, render, screen, waitFor } from "@testing-library/react";
 import ResourceListPage from "../page";
@@ -21,7 +21,7 @@ global.fetch = jest.fn(() =>
         birth_year: "19BBY",
         gender: "male",
         homeworld: "https://swapi.dev/api/people/1/",
-      }]
+      }],
     }),
   }),
 ) as jest.Mock;
@@ -31,7 +31,7 @@ jest.mock("next-intl", () => ({
 }));
 
 jest.mock("next-intl/server", () => ({
-  getTranslations: jest.fn(() => Promise.resolve((key: string) => key))
+  getTranslations: jest.fn(() => Promise.resolve((key: string) => key)),
 }));
 
 describe("Page", () => {
@@ -49,11 +49,11 @@ describe("Page", () => {
     await act(() => render(element));
 
     await waitFor(() =>
-      expect(screen.getByRole("heading", { level: 1 })).toHaveTextContent("people")
+      expect(screen.getByRole("heading", { level: 1 })).toHaveTextContent("people"),
     );
 
     await waitFor(() =>
-      expect(screen.getByText("Luke Skywalker")).toBeInTheDocument()
+      expect(screen.getByText("Luke Skywalker")).toBeInTheDocument(),
     );
 
     expect(screen.getByText("172")).toBeInTheDocument();

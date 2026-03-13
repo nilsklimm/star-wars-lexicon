@@ -1,34 +1,83 @@
 :root {
+  --star-tile-w: 420px;
+  --star-tile-h: 260px;
+  --star-tile: var(--star-tile-w) var(--star-tile-h);
+
   margin: 0;
   min-height: 100vh;
-  /* height: 100vh;
-  overflow: hidden; */
-  position: relative;
 
   background:
     /* Sterne */
-    radial-gradient(1px 1px at 20px 40px, white, transparent),
-    radial-gradient(1px 1px at 90px 120px, white, transparent),
-    radial-gradient(1px 1px at 150px 60px, white, transparent),
-    radial-gradient(1px 1px at 210px 30px, white, transparent),
-    radial-gradient(1px 1px at 260px 170px, white, transparent),
-    radial-gradient(1px 1px at 320px 90px, white, transparent),
-    radial-gradient(1px 1px at 370px 200px, white, transparent),
-    radial-gradient(1px 1px at 120px 200px, white, transparent),
-    radial-gradient(1px 1px at 300px 140px, white, transparent),
+    radial-gradient(
+      1px 1px at
+      calc(var(--star-tile-w) * 0.0476)
+      calc(var(--star-tile-h) * 0.1538),
+      white, transparent
+    ),
+    radial-gradient(
+      1px 1px at
+      calc(var(--star-tile-w) * 0.2143)
+      calc(var(--star-tile-h) * 0.4615),
+      white, transparent
+    ),
+    radial-gradient(
+      1px 1px at
+      calc(var(--star-tile-w) * 0.3571)
+      calc(var(--star-tile-h) * 0.2308),
+      white, transparent
+    ),
+    radial-gradient(
+      1px 1px at
+      calc(var(--star-tile-w) * 0.5)
+      calc(var(--star-tile-h) * 0.1154),
+      white, transparent
+    ),
+    radial-gradient(
+      1px 1px at
+      calc(var(--star-tile-w) * 0.619)
+      calc(var(--star-tile-h) * 0.6538),
+      white, transparent
+    ),
+    radial-gradient(
+      1px 1px at
+      calc(var(--star-tile-w) * 0.7619)
+      calc(var(--star-tile-h) * 0.3462),
+      white, transparent
+    ),
+    radial-gradient(
+      1px 1px at
+      calc(var(--star-tile-w) * 0.881)
+      calc(var(--star-tile-h) * 0.7692),
+      white, transparent
+    ),
+    radial-gradient(
+      1px 1px at
+      calc(var(--star-tile-w) * 0.2857)
+      calc(var(--star-tile-h) * 0.7692),
+      white, transparent
+    ),
+    radial-gradient(
+      1px 1px at
+      calc(var(--star-tile-w) * 0.7143)
+      calc(var(--star-tile-h) * 0.5385),
+      white, transparent
+    ),
 
     /* Nachthimmel */
-    linear-gradient(to bottom, #080e16, #000000);
+    linear-gradient(to bottom, #080e16, #000000) no-repeat,
+
+    /* Hintergrundfarbe */
+    #000000;
 
   background-size:
-    420px 260px,
-    420px 260px,
-    420px 260px,
-    420px 260px,
-    420px 260px,
-    420px 260px,
-    420px 260px,
-    420px 260px,
-    420px 260px,
-    auto;
+    var(--star-tile),
+    var(--star-tile),
+    var(--star-tile),
+    var(--star-tile),
+    var(--star-tile),
+    var(--star-tile),
+    var(--star-tile),
+    var(--star-tile),
+    var(--star-tile),
+    auto 100vh;
 }
