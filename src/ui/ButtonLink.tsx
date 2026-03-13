@@ -24,7 +24,7 @@ export default function ButtonLink({
         aria-hidden="true"
         className={`
           ${coreClassName}
-          text-neutral-400
+          text-neutral-300
           inset-ring-2 inset-ring-neutral-400
           opacity-50 cursor-not-allowed
         `}

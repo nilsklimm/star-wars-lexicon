@@ -1,5 +1,4 @@
-
-const SWAPI_BASE_URL = "https://swapi.dev/api";
+import { SWAPI_BASE_URL } from "@/constants/urls";
 
 export const getResourceList = (resource: string, options?: { page?: number, search?: string }) => {
   const { page = 1, search } = options ?? {};
@@ -11,5 +10,5 @@ export const getResourceList = (resource: string, options?: { page?: number, sea
   return `${SWAPI_BASE_URL}/${resource}/?${params.toString()}`;
 };
 
-export const getResourceDetails = (resource: string, id: string) =>
-  `${SWAPI_BASE_URL}/${resource}/${id}/`;
+export const getResourceDetails = (resource: string, uid: string) =>
+  `${SWAPI_BASE_URL}/${resource}/${uid}/`;

@@ -1,3 +1,7 @@
+import { RESOURCE_TYPES } from "@/constants/resources";
+
+export type ResourceKeyType = keyof typeof RESOURCE_TYPES;
+
 export type ResourceItemType = {
   url: string;
   [key: string]: string | string[];
@@ -9,11 +13,3 @@ export type ResourceListType = {
   previous?: string;
   results: ResourceItemType[];
 };
-
-export type SerializedResourcesType = {
-  columns: string[];
-  data: string[];
-  furtherResources: Record<string, string[]>;
-};
-
-
