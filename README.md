@@ -1,6 +1,6 @@
 # Star Wars Encyclopedia
 
-A **Star Wars Encyclopedia** built with **Next.js** that leverages the [SWAPI](https://swapi.dev/) API to fetch and display detailed information about Star Wars characters, planets, starships, and more. Explore the galaxy far, far away right from your browser!  
+A **Star Wars Encyclopedia** built with **Next.js** that leverages the [SWAPI](https://swapi.py4e.com/) API to fetch and display detailed information about Star Wars characters, planets, starships, and more. Explore the galaxy far, far away right from your browser!  
 
 ## Features
 
@@ -34,6 +34,7 @@ In the project directory, you can run:
 | `npm run build` | Builds the application for production. |
 | `npm run start` | Starts the production server after building. |
 | `npm run lint` | Runs ESLint to check for code style and errors. |
+| `npm run typecheck` | Runs the TypeScript compile to check for type errors. |
 | `npm run test` | Runs Jest tests for your project. |
 
 ### Example
