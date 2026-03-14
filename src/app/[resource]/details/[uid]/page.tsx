@@ -53,7 +53,7 @@ export default async function ResourceDetailsPage({
   if (!name) return notFound();
 
   const items = schema.attrs
-    .filter(key => key !== schema.name && key in data)
+    .filter(key => key in data)
     .map(key => ({
       label: startCase(key),
       value: data[key],
