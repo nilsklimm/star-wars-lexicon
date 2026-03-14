@@ -1,10 +1,12 @@
 type SchemaType = {
   name: string;
-  attrs: string[];
-  texts?: string[];
-  links: string[];
-  meta: string[]
+  attrs: readonly string[];
+  texts?: readonly string[];
+  links: readonly string[];
+  meta: readonly string[];
 };
+
+const META_DATA = ["created", "edited"] as const;
 
 export enum RESOURCE_TYPES {
   people = "people",
@@ -27,13 +29,12 @@ export const PEOPLE_SCHEMA: SchemaType = {
     "gender",
   ],
   links: ["homeworld", "films", "species", "vehicles", "starships"],
-  meta: ["created", "edited"],
-};
+  meta: META_DATA,
+} as const;
 
 export const PLANET_SCHEMA: SchemaType = {
   name: "name",
   attrs: [
-    "name",
     "rotation_period",
     "orbital_period",
     "diameter",
@@ -44,21 +45,31 @@ export const PLANET_SCHEMA: SchemaType = {
     "population",
   ],
   links: ["residents", "films"],
-  meta: ["created", "edited"],
+  meta: META_DATA,
 };
 
 export const FILM_SCHEMA: SchemaType = {
   name: "title",
-  attrs: ["title", "episode_id", "director", "producer", "release_date"],
+  attrs: [
+    "episode_id",
+    "director",
+    "producer",
+    "release_date",
+  ],
   texts: ["opening_crawl"],
-  links: ["characters", "planets", "starships", "vehicles", "species"],
-  meta: ["created", "edited"],
+  links: [
+    "characters",
+    "planets",
+    "starships",
+    "vehicles",
+    "species",
+  ],
+  meta: META_DATA,
 };
 
 export const SPECIES_SCHEMA: SchemaType = {
   name: "name",
   attrs: [
-    "name",
     "classification",
     "designation",
     "average_height",
@@ -69,13 +80,12 @@ export const SPECIES_SCHEMA: SchemaType = {
     "language",
   ],
   links: ["homeworld", "people", "films"],
-  meta: ["created", "edited"],
+  meta: META_DATA,
 };
 
 export const VEHICLE_SCHEMA: SchemaType = {
   name: "name",
   attrs: [
-    "name",
     "model",
     "manufacturer",
     "cost_in_credits",
@@ -88,13 +98,12 @@ export const VEHICLE_SCHEMA: SchemaType = {
     "vehicle_class",
   ],
   links: ["pilots", "films"],
-  meta: ["created", "edited"],
+  meta: META_DATA,
 };
 
 export const STARSHIP_SCHEMA: SchemaType = {
   name: "name",
   attrs: [
-    "name",
     "model",
     "manufacturer",
     "cost_in_credits",
@@ -109,7 +118,7 @@ export const STARSHIP_SCHEMA: SchemaType = {
     "starship_class",
   ],
   links: ["pilots", "films"],
-  meta: ["created", "edited"],
+  meta: META_DATA,
 };
 
 export const RESOURCE_SCHEMAS: Record<RESOURCE_TYPES, SchemaType> = {
